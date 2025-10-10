@@ -1,0 +1,37 @@
+# pyproject.toml
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "hexagonal-polls" 
+
+version = "1.1.0" 
+description = "Core domain contracts for the Hexagonal Polls application."
+readme = "README.md"
+authors = [
+    {name = "Tu Nombre", email = "tu.email@example.com"}
+]
+license = {file = "LICENSE"}
+keywords = ["hexagonal", "architecture", "domain"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Development Status :: 3 - Alpha",
+]
+
+# 💡 DEPENDENCIA AGREGADA AQUÍ
+dependencies = [
+    "zope.interface~=8.0.1",
+]
+
+[tool.hatch.build]
+# Esto instruye a Hatchling a construir el paquete usando el diseño 'src'
+directory = "src" 
+
+[tool.hatch.build.targets.sdist]
+include = ["/src"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/hexagonal_polls"]
