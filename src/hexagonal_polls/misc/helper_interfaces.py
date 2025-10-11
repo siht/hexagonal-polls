@@ -8,6 +8,12 @@ from dtos import (
     QuestionDTO,
 )
 
+__all__ = (
+    'IVoteIOFrameworkAdapter',
+    'IQuestionCreatorIOFrameworkAdapter',
+    'IChoiceCreatorIOFrameworkAdapter',
+)
+
 
 class IVoteIOFrameworkAdapter(Interface):
     def input(input: Any) -> int:

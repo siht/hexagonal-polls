@@ -1,5 +1,10 @@
 # misc/patterns.py
 
+__all__ = (
+    'FlyWeight',
+    'Singleton',
+)
+
 class Singleton(type):
     """Patrón singleton como metaclase
     la clase que implemente este comportamiento ya no podrá instanciar otro objeto

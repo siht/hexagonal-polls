@@ -16,6 +16,18 @@ from .dtos import (
     QuestionDTO,
 )
 
+__all__ = (
+    'IChoiceRepository',
+    'ICreateChoiceExecutor',
+    'ICreateQuestionExecutor',
+    'IExecuteVote',
+    'IGetQuestionRecent',
+    'IQuestionRepository',
+    'IRepository',
+    'IVoteExecutor',
+)
+
+
 Criteria = Dict[str, Any] 
 
 T = TypeVar('T')
@@ -109,6 +121,3 @@ class IVoteExecutor(Interface):
 
     def vote(choice_id: int) -> int:
         """Return int the actual votes and update vote counter for an specific Choice."""
-
-    def get_updated_choie(choice_id: int) -> ChoiceDTO:
-        """return ChoiceDTO"""

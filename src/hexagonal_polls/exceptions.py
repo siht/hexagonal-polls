@@ -1,4 +1,15 @@
 # exceptions.py
+
+__all__ = (
+    'ChoiceDataError',
+    'ChoiceNotFound',
+    'EntityNotFound',
+    'ModelError',
+    'QuestionDataError',
+    'QuestionNotFound',
+    'RepositoryError',
+)
+
 class RepositoryError(Exception):
     """Excepción base para todos los errores relacionados con el repositorio."""
     ...
@@ -27,12 +38,19 @@ class ModelError(Exception):
 
 class ChoiceDataError(ModelError):
     """Se lanza cuando hay inconsistencia de datos"""
-    ...
+    def __init__(self, message: str):
+        super().__init__(message)
 
 
 class ChoiceNotFound(RepositoryError):
     """
     Se lanza cuando un Choice con el ID especificado no puede ser encontrado.
     """
+    def __init__(self, message: str):
+        super().__init__(message)
+
+
+class QuestionDataError(ModelError):
+    """Se lanza cuando hay inconsistencia de datos"""
     def __init__(self, message: str):
         super().__init__(message)
