@@ -3,7 +3,7 @@
 from typing import Any
 from zope.interface import Interface
 
-from dtos import (
+from ..dtos import (
     ChoiceDTO,
     QuestionDTO,
 )

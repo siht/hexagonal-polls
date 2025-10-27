@@ -7,7 +7,7 @@ build-backend = "hatchling.build"
 [project]
 name = "hexagonal-polls" 
 
-version = "1.3.0"
+version = "1.4.0"
 description = "Core domain contracts for the Hexagonal Polls application."
 readme = "README.md"
 authors = [
