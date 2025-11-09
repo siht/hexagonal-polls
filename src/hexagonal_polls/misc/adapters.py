@@ -112,7 +112,7 @@ class AbstractQuestionCreatorIOFrameworkAdapter(ABC):
         if es_un_dto_de_creacion:
             if not data.pub_date:
                 errors.append('Para crear una pregunta debe tener fecha')
-            if data.question_text:
+            if not data.question_text:
                 errors.append('Para crear una pregunta debe tener question_text')
         if errors:
             raise QuestionDataError(errors)

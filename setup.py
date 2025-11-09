@@ -6,7 +6,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='hexagonal-polls',
-    version='1.5.0',
+    version='1.5.1',
     description='Core domain contracts for the Hexagonal Polls application.',
     
     # 1. Indicamos a Setuptools que busque paquetes DENTRO de la carpeta 'src'.
