@@ -7,7 +7,7 @@ build-backend = "hatchling.build"
 [project]
 name = "hexagonal-polls" 
 
-version = "1.4.0"
+version = "1.5.0"
 description = "Core domain contracts for the Hexagonal Polls application."
 readme = "README.md"
 authors = [
@@ -34,3 +34,8 @@ include = ["/src"]
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/hexagonal_polls"]
+
+[tool.pytest.ini_options]
+# Esto le dice a pytest que añada la carpeta 'src' al PYTHONPATH
+# para que Python pueda encontrar 'hexagonal_polls'
+pythonpath = ["src"]

@@ -1,5 +1,7 @@
 # exceptions.py
 
+from typing import List
+
 __all__ = (
     'ChoiceDataError',
     'ChoiceNotFound',
@@ -52,5 +54,5 @@ class ChoiceNotFound(RepositoryError):
 
 class QuestionDataError(ModelError):
     """Se lanza cuando hay inconsistencia de datos"""
-    def __init__(self, message: str):
+    def __init__(self, message: str|List[str]):
         super().__init__(message)

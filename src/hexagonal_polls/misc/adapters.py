@@ -108,13 +108,19 @@ class AbstractQuestionCreatorIOFrameworkAdapter(ABC):
 
     def validate(self, data: QuestionDTO) -> QuestionDTO:
         es_un_dto_de_creacion = not data.id
+        errors = []
         if es_un_dto_de_creacion:
             if not data.pub_date:
-                raise QuestionDataError('Para crear una pregunta debe tener fecha')
+                errors.append('Para crear una pregunta debe tener fecha')
+            if data.question_text:
+                errors.append('Para crear una pregunta debe tener question_text')
+        if errors:
+            raise QuestionDataError(errors)
         return data
 
     def execute(self, input: Any) -> Any:
         """Return something related with Choice"""
         choice = self.input(input)
         validated_choice = self.validate(choice)
-        return self.output(validated_choice)
+        saved_choice = self.choice_executor.execute(validated_choice)
+        return self.output(saved_choice)
